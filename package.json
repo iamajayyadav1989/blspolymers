@@ -2,7 +2,7 @@
   "name": "blspolymers",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "/",
   "dependencies": {
     "@coreui/chartjs": "^4.0.0",
     "@coreui/icons": "^3.0.1",
