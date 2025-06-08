@@ -46,7 +46,7 @@ import AdminLayout from "./admin/layout/AdminLayout";
 
 // export const adminBaseUrl = "http://localhost:005000";
 export const adminBaseUrl =
-  "https://vasudeep.com:8084/http://srv859195.hstgr.cloud";
+  "https://vasudeep.com:8084/http://srv859195.hstgr.cloud:8080";
 
 // Home Page Combined Component
 const HomePage = () => {
