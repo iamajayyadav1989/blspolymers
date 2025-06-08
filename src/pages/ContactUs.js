@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 import ContactHero from "../components/Contact/ContactHero";
 import ContactDetails from "../components/Contact/ContactDetails";
 import ContactForm from "../components/Contact/ContactForm";
@@ -11,7 +12,7 @@ const ContactUs = () => {
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/contact");
+        const response = await axios.get(adminBaseUrl + "/api/contact");
         setContactData(response.data);
       } catch (error) {
         console.error("Error fetching contact data:", error);

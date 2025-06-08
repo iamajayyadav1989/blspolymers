@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+
 import {
   CCard,
   CCardHeader,
@@ -10,6 +11,7 @@ import {
   CRow,
   CCol,
 } from "@coreui/react";
+import { adminBaseUrl } from "../../App";
 
 const AdminClients = () => {
   const [title, setTitle] = useState("");
@@ -20,7 +22,7 @@ const AdminClients = () => {
   const imageIndexRef = useRef(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/clients").then((res) => {
+    axios.get(adminBaseUrl + "/api/clients").then((res) => {
       if (res.data) {
         setTitle(res.data.title || "");
         setClients(res.data.clients || []);
@@ -47,13 +49,9 @@ const AdminClients = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/upload",
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+      const res = await axios.post(adminBaseUrl + "/api/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
       const newClients = [...clients];
       newClients[imageIndexRef.current].image = res.data.filename;
@@ -70,7 +68,7 @@ const AdminClients = () => {
     setMessage("");
 
     try {
-      await axios.put("http://localhost:5000/api/clients", { title, clients });
+      await axios.put(adminBaseUrl + "/api/clients", { title, clients });
       setMessage("Clients section updated successfully");
     } catch (err) {
       setMessage("Failed to update Clients section");

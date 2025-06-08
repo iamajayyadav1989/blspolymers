@@ -44,6 +44,8 @@ import AdminClients from "./admin/pages/AdminClients";
 import NewsSectionAdmin from "./admin/pages/NewsSectionAdmin";
 import AdminLayout from "./admin/layout/AdminLayout";
 
+export const adminBaseUrl = "http://localhost:005000";
+
 // Home Page Combined Component
 const HomePage = () => {
   return (
@@ -65,7 +67,7 @@ const HomePage = () => {
 
 const App = () => {
   return (
-    <Router basename="/bls-polymers">
+    <Router basename="/">
       <Routes>
         {/* Main Website Layout */}
         <Route element={<MainLayout />}>

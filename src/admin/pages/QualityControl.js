@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -23,7 +24,7 @@ const QualityControl = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/qualitycontrol")
+      .get(adminBaseUrl + "/api/qualitycontrol")
       .then((res) => {
         setFormData(res.data);
         setId(res.data._id);

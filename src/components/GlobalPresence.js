@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddressBox from "./AddressBox";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const GlobalPresence = () => {
   const [data, setData] = useState(null);
@@ -8,9 +9,7 @@ const GlobalPresence = () => {
   useEffect(() => {
     const fetchGlobalPresence = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:5000/api/global-presence"
-        );
+        const response = await axios.get(adminBaseUrl + "/api/global-presence");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching Global Presence", error);

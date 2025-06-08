@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const ClientsSection = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/clients")
+      .get(adminBaseUrl + "/api/clients")
       .then((res) => setData(res.data))
       .catch((err) => console.error(err));
   }, []);

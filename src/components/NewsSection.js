@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NewsCard from "./NewsCard";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const NewsSection = () => {
   const [newsData, setNewsData] = useState(null);
@@ -8,7 +9,7 @@ const NewsSection = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/newssection");
+        const res = await axios.get(adminBaseUrl + "/api/newssection");
         setNewsData(res.data);
       } catch (error) {
         console.error("Error fetching news data:", error);

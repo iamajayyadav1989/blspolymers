@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const HeroCarousel = () => {
   const [slides, setSlides] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/heroslides") // Adjust port if needed
+      // .get(adminBaseUrl + "/api/heroslides") // Adjust port if needed
+      .get(adminBaseUrl + "/api/heroslides") // Adjust port if needed
       .then((res) => setSlides(res.data))
       .catch((err) => console.error("Error fetching slides:", err));
   }, []);

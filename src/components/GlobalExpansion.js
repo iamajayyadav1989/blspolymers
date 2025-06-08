@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const GlobalExpansion = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/globalexpansion")
+      .get(adminBaseUrl + "/api/globalexpansion")
       .then((res) => {
         if (res.data.length > 0) setData(res.data[0]);
       })

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const PowerCables = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/powercables")
+      .get(adminBaseUrl + "/api/powercables")
       .then((res) => setData(res.data))
       .catch((err) => console.error("Failed to load PowerCables", err));
   }, []);

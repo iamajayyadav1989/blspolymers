@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -25,7 +26,7 @@ const Stats = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/stats").then((res) => {
+    axios.get(adminBaseUrl + "/api/stats").then((res) => {
       setStatsData(res.data);
       setId(res.data._id);
     });

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact-form",
+        adminBaseUrl + "/api/contact-form",
         formData
       );
       alert("Message sent successfully!");

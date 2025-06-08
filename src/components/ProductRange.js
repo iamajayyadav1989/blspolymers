@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const ProductRange = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/productrange")
+      .get(adminBaseUrl + "/api/productrange")
       .then((res) => setData(res.data))
       .catch((err) => console.error("Failed to load ProductRange", err));
   }, []);

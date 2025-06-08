@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -26,7 +28,7 @@ const AdminProductSection = () => {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get(adminBaseUrl + "/api/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Error loading products", err));
   };
@@ -64,7 +66,7 @@ const AdminProductSection = () => {
 
   const handleAddNewProduct = () => {
     axios
-      .post("http://localhost:5000/api/products", newProduct)
+      .post(adminBaseUrl + "/api/products", newProduct)
       .then(() => {
         setMessage("New product added.");
         setNewProduct({ title: "", description: "", image: "" });

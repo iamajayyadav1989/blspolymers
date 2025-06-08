@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -23,7 +24,7 @@ const AdminPipeCoating = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/pipecoating")
+      .get(adminBaseUrl + "/api/pipecoating")
       .then((res) => setData(res.data))
       .catch((err) => console.error("Error loading data", err));
   }, []);
@@ -43,7 +44,7 @@ const AdminPipeCoating = () => {
 
   const handleUpdate = () => {
     axios
-      .put("http://localhost:5000/api/pipecoating", data)
+      .put(adminBaseUrl + "/api/pipecoating", data)
       .then(() => setMessage("Pipe Coating section updated successfully!"))
       .catch((err) => {
         console.error("Update failed:", err.response?.data || err.message);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -24,7 +25,7 @@ const AdminPowerCables = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/powercables")
+      .get(adminBaseUrl + "/api/powercables")
       .then((res) => setData(res.data))
       .catch((err) => console.error("Error loading data", err));
   }, []);
@@ -44,7 +45,7 @@ const AdminPowerCables = () => {
 
   const handleUpdate = () => {
     axios
-      .put("http://localhost:5000/api/powercables", data)
+      .put(adminBaseUrl + "/api/powercables", data)
       .then(() => setMessage("Power Cable section updated successfully!"))
       .catch((err) => {
         console.error("Update failed:", err.response?.data || err.message);

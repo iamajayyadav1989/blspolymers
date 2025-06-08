@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const QualityControl = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/qualitycontrol")
+      .get(adminBaseUrl + "/api/qualitycontrol")
       .then((res) => setData(res.data))
       .catch((err) =>
         console.error("Error fetching quality control data:", err)

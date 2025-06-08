@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -25,7 +26,7 @@ const GlobalExpansion = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/globalexpansion")
+      .get(adminBaseUrl + "/api/globalexpansion")
       .then((res) => {
         if (res.data.length > 0) {
           const data = res.data[0];

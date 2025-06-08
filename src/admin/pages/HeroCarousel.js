@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CCard,
   CCardBody,
@@ -37,7 +38,7 @@ const HeroCarousel = () => {
 
   const fetchSlides = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/heroslides");
+      const res = await axios.get(adminBaseUrl + "/api/heroslides");
       setSlides(res.data);
     } catch (error) {
       console.error("Error fetching slides", error);
@@ -79,7 +80,7 @@ const HeroCarousel = () => {
       } else {
         // Send create request for new slide
         const response = await axios.post(
-          "http://localhost:5000/api/heroslides",
+          adminBaseUrl + "/api/heroslides",
           data,
           { headers: { "Content-Type": "multipart/form-data" } }
         );

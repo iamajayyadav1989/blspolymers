@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/products", formData);
+    await axios.post(adminBaseUrl + "/api/products", formData);
     alert("Product added!");
   };
 

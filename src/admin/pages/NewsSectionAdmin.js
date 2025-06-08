@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../../App";
 import {
   CButton,
   CCard,
@@ -18,7 +19,7 @@ const NewsSectionAdmin = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/newssection");
+      const res = await axios.get(adminBaseUrl + "/api/newssection");
       setNewsData(res.data);
     } catch (err) {
       console.error(err);
@@ -52,7 +53,7 @@ const NewsSectionAdmin = () => {
     });
 
     try {
-      await axios.put("http://localhost:5000/api/newssection/update", formData);
+      await axios.put(adminBaseUrl + "/api/newssection/update", formData);
       alert("News Section updated successfully!");
       fetchData();
     } catch (err) {

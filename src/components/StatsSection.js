@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { adminBaseUrl } from "../App";
 
 const StatsSection = () => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/stats")
+      .get(adminBaseUrl + "/api/stats")
       .then((res) => setStats(res.data))
       .catch((err) => console.error("Error loading stats", err));
   }, []);
