@@ -44,7 +44,9 @@ import AdminClients from "./admin/pages/AdminClients";
 import NewsSectionAdmin from "./admin/pages/NewsSectionAdmin";
 import AdminLayout from "./admin/layout/AdminLayout";
 
-export const adminBaseUrl = "http://localhost:005000";
+// export const adminBaseUrl = "http://localhost:005000";
+export const adminBaseUrl =
+  "https://vasudeep.com:8084/http://srv859195.hstgr.cloud";
 
 // Home Page Combined Component
 const HomePage = () => {
