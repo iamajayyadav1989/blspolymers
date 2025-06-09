@@ -7,7 +7,8 @@
 /* General Styles */
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 1.375rem;
+  font-size:  18px;
+  color: #414042;
 }
 
 h1 {
@@ -18,6 +19,7 @@ h1 {
 p {
   font-family: "Roboto", sans-serif;
   font-weight: 400; /* Regular */
+  font-size: 18px;
 }
 
 .light-text {
@@ -32,7 +34,7 @@ p {
   padding: 0px;
 }
 .navbar-brand img {
-  max-height: 90px;
+  max-height: 75px;
 }
 
 /* Hero Section Styling */
@@ -60,17 +62,17 @@ p {
 }
 
 .hero-title {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: bold;
-  line-height: 94px;
+  line-height: 68px;
 }
 
 .hero-subtitle {
   font-family: "Roboto Slab", serif;
   font-weight: 400; /* Regular */
-  font-size: 2.375rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
-  line-height: 42px;
+  line-height: 34px;
 }
 .light-blue {
   color: #0a7ab7;
@@ -137,7 +139,7 @@ p {
 }
 
 .navbar-nav .nav-link {
-  font-size: 18px;
+  font-size: 16px;
   color: #003262;
   line-height: 34px;
   font-weight: 300;
@@ -210,6 +212,7 @@ p {
   .expansion-list {
     justify-content: center;
   }
+  
 }
 .pr-0 {
   padding-right: 0px;
@@ -257,7 +260,6 @@ p {
 }
 .product-range p {
   color: #48484a;
-  font-size: 1.375rem;
 }
 .product-range .overlay-box p {
   color: #fff;
@@ -292,7 +294,7 @@ p {
   text-transform: uppercase;
   position: relative;
   font-family: "Roboto Slab", serif;
-  line-height: 12px;
+  line-height: 24px;
 }
 
 a.read-more {
@@ -300,7 +302,6 @@ a.read-more {
   font-weight: bold;
   font-family: "Roboto Slab", serif;
   text-decoration: none;
-  font-size: 1.375rem;
 }
 
 .read-more:hover {
@@ -320,7 +321,7 @@ a.read-more {
 
 .image-container {
   width: 300px; /* Adjust as needed */
-  height: 187px; /* Adjust as needed */
+  height: 180px; /* Adjust as needed */
   background: url("../images/layer_84.jpg") no-repeat center center;
   background-size: cover;
   position: absolute;
@@ -328,7 +329,7 @@ a.read-more {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  top: 352px;
+  top: 341px;
 }
 
 .arrow-icon {
@@ -549,7 +550,7 @@ a.read-more {
   text-transform: uppercase;
   position: relative;
   font-family: "Roboto Slab", serif;
-  color: #0a7ab7;
+  color: #003262;
 }
 
 .product-section .section-title::before {
@@ -574,7 +575,7 @@ a.read-more {
 }
 .product-info::before {
   right: 50px;
-  content: url(../images/arrow_01.png);
+  content: url(../images/arrow_blue.png);
   display: inline-block;
   width: 20px;
   height: auto;
@@ -615,10 +616,11 @@ a.read-more {
 }
 
 .product-info p {
-  font-size: 1.375rem;
+  font-size: 20px;
   margin-bottom: 0px;
   color: #48484a;
   padding-right: 50px;
+  line-height: 28px;
 }
 
 .product-info:hover {
@@ -635,13 +637,17 @@ a.read-more {
 .product-info:hover::before {
   content: url(../images/arrow_white.png); /* Change arrow on hover */
 }
+
+.product-section a{
+    text-decoration: none;
+}
 .product-section img {
   display: inline-block;
-  padding-bottom: 20px; /* Space for the border */
+  padding-bottom: 18px; /* Space for the border */
   background: linear-gradient(to right, #0a7ab7, #003262) no-repeat;
   background-position: bottom;
   background-size: 100% 20px; /* Border thickness */
-  height: 432px;
+  height: 402px;
 }
 
 /* More Products Button */
@@ -687,7 +693,7 @@ a.read-more {
 }
 .product-card .overlay.active::before {
   right: 50px;
-  content: url(../images/arrow_01.png);
+  content: url(../images/arrow_blue.png);
   display: inline-block;
   width: 20px;
   height: auto;
@@ -709,7 +715,7 @@ a.read-more {
 }
 .pipe-coating .product-card .overlay.active::before {
   right: 50px;
-  content: url(../images/arrow_01.png);
+  content: url(../images/arrow_blue.png);
   display: inline-block;
   width: 20px;
   height: auto;
@@ -730,7 +736,7 @@ a.read-more {
 }
 
 .product-card p {
-  font-size: 1.375rem;
+  font-size:  18px;
   margin-top: 0px;
   padding-right: 50px;
 }
@@ -917,7 +923,7 @@ a.read-more {
 }
 
 .news-card p.news-text::before {
-  content: url(../images/arrow_01.png);
+  content: url(../images/arrow_blue.png);
   display: inline-block;
   width: 20px;
   height: auto;
@@ -1122,7 +1128,7 @@ a.read-more {
 }
 
 .footer-bottom {
-  font-size: 21px;
+  font-size: 12px;
   margin-top: 20px;
   margin-bottom: 0px;
 }
@@ -1374,7 +1380,7 @@ a.read-more {
   }
 
   .hero-subtitle {
-    font-size: 1.2.5rem;
+    font-size: 1.2rem;
     line-height: 30px;
     text-align: left;
     padding-left: 15px;
@@ -1818,7 +1824,7 @@ a.read-more {
   position: relative;
   width: 100%;
   height: 450px; /* Adjust height as needed */
-  background: url("../images/events-banner.jpg") no-repeat center center/cover;
+  background: url("../images/events_bnr.jpg") no-repeat center center/cover;
 }
 
 .investor-hero-section {
@@ -1839,7 +1845,7 @@ a.read-more {
 
 .breadcrumb a {
   text-decoration: none;
-  color: #212529;
+  color: #414042;
 }
 
 .breadcrumb a:hover {
@@ -1900,10 +1906,6 @@ a.read-more {
   margin-right: 10px;
 }
 
-/* Text Styling */
-.heritage-text {
-  font-size: 22px;
-}
 
 .contact-title {
   color: #003262;
@@ -1966,7 +1968,7 @@ a.read-more {
 
 /* Text Styling */
 .heritage-text {
-  font-size: 1.375rem;
+  font-size: 18px;
   line-height: 1.8;
   font-weight: 400;
 }
@@ -2020,7 +2022,7 @@ a.read-more {
 }
 
 .value-item p {
-  font-size: 1.375rem;
+  font-size: 18px;
   color: #48484a;
   margin-top: 10px;
 }
@@ -2250,6 +2252,140 @@ a.read-more {
 .gallery-hero-section {
   position: relative;
   width: 100%;
-  height: 450px;
-  background: url(../images/gallery.jpg) no-repeat center center / cover;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/gallery.jpg") no-repeat center center/cover;
+}
+.gallery-section img{
+  width: 100%;
+  height: auto !important;
+}
+.gallery-section .event-card p{
+    font-size: 18px;
+}
+
+.pipecoating-hero-section {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/pipe_coating.jpg") no-repeat center
+    center/cover;
+}
+.hffr-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/HFFR_Inner_compound_bnr.jpg") no-repeat center
+    center/cover;
+}
+.xlpe-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/potical_fibre_cables_inner_banner.jpg") no-repeat center
+    center/cover;
+}
+.pvc-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/pvc_compound.jpg") no-repeat center
+    center/cover;
+}
+ .career-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/bls_careers.jpg") no-repeat center
+    center/cover;
+}
+.services-hero-section{
+  position: relative;
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  background-color: #003b7a;
+}
+
+ .blsgroup-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/bls_group.jpg") no-repeat center
+    center/cover;
+}
+.product-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/Banner 4_2.jpg") no-repeat center
+    center/cover;
+}
+.aboutus-hero-section{
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  background: url("../images/about_us_bnr.jpg") no-repeat center
+    center/cover;
+}
+.product-card a{
+    color: unset;
+    text-decoration: none;
+} 
+a{
+    text-decoration: none;
+}
+.list-unstyled a{
+    color: #414042;
+    font-size: 18px;
+}
+.list-unstyled li p{
+    font-size: 15px;
+}
+.pe-compound a{
+    color: #414042;
+}
+
+.pe-compound a:hover{
+    color: #b2122a;
+}
+.list-unstyled a:hover{
+    color: #b2122a;
+}
+.services-section .img-services{
+    height: 90px !important;
+}
+.services-section h3 {
+    color: #003262;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bls-group .card h5 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+ .bls-group .card img {
+    max-height: 80px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 767px) {
+    .bls-group .card .d-flex {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .bls-group .card img {
+      margin-bottom: 1rem;
+    }
+  }
+.company-name h4{
+    color: #003262;
+}
+.blsgroup-title{
+    color: #003262;
 }
