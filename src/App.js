@@ -9,9 +9,11 @@ import MinimalLayout from "./layouts/MinimalLayout";
 import AboutUs from "./pages/AboutUs";
 import Certifications from "./pages/Certifications";
 import Product from "./pages/Products";
+import Services from "./pages/Services";
 import Investors from "./pages/Investors";
 import Events from "./pages/NewsEvents";
 import Gallery from "./pages/Gallery";
+import Careers from "./pages/Careers";
 import ContactUs from "./pages/ContactUs";
 import AdminLogin from "./pages/AdminLogin";
 
@@ -77,9 +79,11 @@ const App = () => {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/certificate" element={<Certifications />} />
           <Route path="/products" element={<Product />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/investors" element={<Investors />} />
           <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />
         </Route>
 
