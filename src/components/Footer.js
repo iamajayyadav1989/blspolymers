@@ -33,22 +33,19 @@ const Footer = () => {
             <h5>Company</h5>
             <ul className="footer-links">
               <li>
-                <a href="#">About Us</a>
+                <a href="/aboutus">About Us</a>
               </li>
               <li>
-                <a href="#">BLS Group</a>
+                <a href="/products">Products</a>
               </li>
               <li>
-                <a href="#">Products</a>
+                <a href="/services">Services</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="/careers">Careers</a>
               </li>
               <li>
-                <a href="#">Careers</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
+                <a href="/contactus">Contact Us</a>
               </li>
             </ul>
           </div>
