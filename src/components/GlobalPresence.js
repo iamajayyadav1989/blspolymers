@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import AddressBox from "./AddressBox";
 import axios from "axios";
 import { adminBaseUrl } from "../App";
 
@@ -26,7 +25,7 @@ const GlobalPresence = () => {
       <div className="container">
         <div className="row align-items-center">
           {/* Left: Map & Heading */}
-          <div className="col-md-8">
+          <div className="col-md-12">
             <h2 className="section-title">
               {data.title.split(" ").slice(0, 2).join(" ")} <br />
               {data.title.split(" ").slice(2).join(" ")}
@@ -38,11 +37,6 @@ const GlobalPresence = () => {
                 alt="World Map"
               />
             </div>
-          </div>
-
-          {/* Right: Dynamic Addresses */}
-          <div className="col-md-4">
-            <AddressBox addresses={data.addresses} />
           </div>
         </div>
       </div>

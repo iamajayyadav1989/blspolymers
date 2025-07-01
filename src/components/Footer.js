@@ -54,13 +54,13 @@ const Footer = () => {
           <div className="col-md-5 text-center">
             <h5>Connect with us</h5>
             <div className="footer-social pt-5">
-              <a href="#">
+              <a href="/">
                 <img src={facebookIcon} alt="Facebook" />
               </a>
-              <a href="#">
+              <a href="/">
                 <img src={linkedinIcon} alt="LinkedIn" />
               </a>
-              <a href="#">
+              <a href="/">
                 <img src={youtubeIcon} alt="YouTube" />
               </a>
             </div>
@@ -69,10 +69,14 @@ const Footer = () => {
           {/* Column 4: Contact Info */}
           <div className="col-md-2 text-center border-left">
             <h5>Contact Us</h5>
-            <p className="footer-contact pt-5">
+            <p className="footer-contact pt-2">
               info@blspolymers.com
               <br />
               Tel. (011)-23310658
+            </p>
+            <p className="footer-contact">
+              <i className="fas fa-map-marker-alt"></i> 604, Indraprakash
+              Building, 21, Barakhamba Road, New Delhi - 110001
             </p>
           </div>
         </div>
@@ -82,7 +86,7 @@ const Footer = () => {
           <div className="col text-center">
             <p className="footer-bottom">
               © BLS POLYMERS 2025. All Rights Reserved.{" "}
-              <a className="text-white" href="#">
+              <a className="text-white" href="/">
                 Privacy Policy
               </a>
             </p>

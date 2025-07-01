@@ -14,14 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Power Cables Hover Effect Change Active Class
-$(document).ready(function () {
-  $(".product-info").hover(function () {
-    $(".product-info").removeClass("active"); // Remove active class from all
-    $(this).addClass("active"); // Add active class to hovered one
-  });
-});
-
 // Counter
 function animateCountUp(element, start, end, duration) {
   let startTime = null;
@@ -43,11 +35,11 @@ function animateCountUp(element, start, end, duration) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const counter = document.getElementById("yearcounter");
-  animateCountUp(counter, 0, 15, 2000); // Count from 0 to 15 in 2 seconds
+  animateCountUp(counter, 0, 15, 7000); // Count from 0 to 15 in 2 seconds
 });
 document.addEventListener("DOMContentLoaded", () => {
   const counter = document.getElementById("clients");
-  animateCountUp(counter, 0, 120, 2000); // Count from 0 to 15 in 2 seconds
+  animateCountUp(counter, 0, 120, 7000); // Count from 0 to 15 in 2 seconds
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(step);
   }
 
-  animateCountUp(counter, 0, 37000, 2000); // Count from 0 to 37,000 in 2 seconds
+  animateCountUp(counter, 0, 37000, 7000); // Count from 0 to 37,000 in 2 seconds
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -83,5 +75,15 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       location.classList.add("visible");
     }, index * 500); // Delay each location by 500ms
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("a.btn-primary").forEach((el) => {
+    const text = el.textContent.trim();
+    el.textContent = "";
+    const span = document.createElement("span");
+    span.textContent = text;
+    el.appendChild(span);
   });
 });

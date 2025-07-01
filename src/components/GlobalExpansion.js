@@ -15,7 +15,6 @@ const GlobalExpansion = () => {
   }, []);
 
   if (!data || data.length === 0) return <div>Loading...</div>;
-  const content = data[0]; // Access the first object
 
   return (
     <section className="global-expansion">
@@ -34,12 +33,6 @@ const GlobalExpansion = () => {
               <strong>{data.paragraph1}</strong>
             </p>
             <p>{data.paragraph2}</p>
-            <ul className="expansion-list">
-              {data.listItems.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-            <p>{data.paragraph3}</p>
           </div>
           <div className="col-lg-6 p-0">
             <img

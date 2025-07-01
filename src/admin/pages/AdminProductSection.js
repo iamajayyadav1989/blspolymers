@@ -6,7 +6,6 @@ import {
   CCard,
   CCardBody,
   CCardHeader,
-  CForm,
   CFormInput,
   CFormLabel,
   CFormTextarea,
@@ -15,11 +14,6 @@ import {
 
 const AdminProductSection = () => {
   const [products, setProducts] = useState([]);
-  const [newProduct, setNewProduct] = useState({
-    title: "",
-    description: "",
-    image: "",
-  });
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -49,31 +43,6 @@ const AdminProductSection = () => {
       .catch((err) => {
         console.error("Update failed:", err);
         setMessage("Failed to update product.");
-      });
-  };
-
-  const handleDelete = (id) => {
-    axios
-      .delete(`http://localhost:5000/api/products/${id}`)
-      .then(() => {
-        setMessage("Product deleted.");
-        fetchProducts();
-      })
-      .catch((err) => {
-        console.error("Delete failed:", err);
-      });
-  };
-
-  const handleAddNewProduct = () => {
-    axios
-      .post(adminBaseUrl + "/api/products", newProduct)
-      .then(() => {
-        setMessage("New product added.");
-        setNewProduct({ title: "", description: "", image: "" });
-        fetchProducts();
-      })
-      .catch((err) => {
-        console.error("Add failed:", err);
       });
   };
 

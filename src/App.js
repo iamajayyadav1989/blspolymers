@@ -58,9 +58,11 @@ const HomePage = () => {
       <GlobalExpansion />
       <ProductRange />
       <StatsSection />
-      <PowerCables />
-      <PipeCoating />
-      <ProductSection />
+      <div className="products-wrapper">
+        <PowerCables />
+        <PipeCoating />
+        <ProductSection />
+      </div>
       <QualityControl />
       <ClientsSection />
       <NewsSection />

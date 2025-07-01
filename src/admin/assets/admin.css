@@ -17,13 +17,6 @@
   font-size: 16px;
 }
 
-#root .btn-primary{
-  border: 1px solid transparent;
-  padding: 6px 12px;
-  border-radius: 4px;
-  box-shadow: none;
-  font-weight: normal;
-}
 .ml-15{
   margin-left: 15px;
 }
@@ -41,4 +34,7 @@
 .admin-login{
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   margin-top: 8rem;
+}
+.sidebar-nav .nav-link{
+  display: block;
 }

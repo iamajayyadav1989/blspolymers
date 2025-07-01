@@ -154,7 +154,9 @@ p {
 
 /* Global Expansion Section */
 .global-expansion {
-  background: linear-gradient(to right, #003463, #0a79b5);
+  background: linear-gradient(to right, #003262, #0a7ab7);
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
   padding: 0px;
 }
 
@@ -265,16 +267,45 @@ p {
   color: #fff;
 }
 .btn-primary {
+  position: relative;
   background-color: #0a7ab7;
   border: none;
   padding: 10px 20px;
   border-radius: 0px;
-  box-shadow: rgb(0, 50, 98) 1.95px 1.95px 2.6px;
   font-weight: 600;
+  overflow: hidden;
+  color: white;
+  z-index: 1;
 }
 
-.btn-primary:hover {
-  background-color: #ed2258;
+/* Button background animation */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: #ed2258;
+  transform: skew(30deg) translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  z-index: 0; /* behind the text */
+}
+
+.btn-primary:hover::before {
+  transform: skew(30deg) translateX(0);
+}
+
+/* Button text */
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* Change text color on hover */
+.btn-primary:hover span {
+  color: #fff;
 }
 
 /* Right Side Overlay */
@@ -286,6 +317,7 @@ p {
   padding: 20px;
   width: 300px;
   margin-top: 66px;
+  height: 180px;
 }
 
 .overlay-content p {
@@ -295,6 +327,17 @@ p {
   position: relative;
   font-family: "Roboto Slab", serif;
   line-height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+#contentWrapper,
+#productImage {
+  transition: opacity 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 a.read-more {
@@ -310,13 +353,14 @@ a.read-more {
 
 .overlay-box a.read-more::before {
   right: 50px;
-  content: url(../images/arrow_white.png);
+  content: url(../images/noun-arrow-white.svg);
   display: inline-block;
-  width: 20px;
+  width: 30px;
   height: auto;
-  margin-right: 49px;
+  margin-right: 35px;
   position: absolute;
-  padding-top: 5px;
+  padding-top: 0px;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 
 .image-container {
@@ -567,37 +611,47 @@ a.read-more {
 .product-info {
   background: white;
   color: white;
-  padding: 15px;
+  padding: 5px 15px;
   margin-bottom: 0px;
   border-bottom: 2px solid #0a7ab7;
   transition: all 0.4s ease-in-out; /* Smooth transition */
   cursor: pointer;
 }
 .product-info::before {
-  right: 50px;
-  content: url(../images/arrow_blue.png);
+  right: 25px;
+  content: url(../images/noun-arrow-3134190.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
-  margin-right: 10px;
   position: absolute;
-  padding-top: 60px;
+  padding-top: 40px;
+  animation: moveLeftRight 1s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes moveLeftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2px); /* or use +2px for right */
+  }
 }
 .product-info.active::before {
-  right: 50px;
-  content: url(../images/arrow_white.png);
+  right: 25px;
+  content: url(../images/noun-arrow-white.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
-  margin-right: 10px;
   position: absolute;
-  padding-top: 60px;
+  padding-top: 40px;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 
 .product-info.active {
   background: #0a7ab7;
   color: white;
-  padding: 15px;
+  padding: 5px 15px;
   margin-bottom: 0px;
   border-bottom: 2px solid #0a7ab7;
 }
@@ -635,7 +689,7 @@ a.read-more {
 }
 
 .product-info:hover::before {
-  content: url(../images/arrow_white.png); /* Change arrow on hover */
+  content: url(../images/noun-arrow-white.svg); /* Change arrow on hover */
 }
 
 .product-section a{
@@ -647,7 +701,7 @@ a.read-more {
   background: linear-gradient(to right, #0a7ab7, #003262) no-repeat;
   background-position: bottom;
   background-size: 100% 20px; /* Border thickness */
-  height: 402px;
+  height: 456px;
 }
 
 /* More Products Button */
@@ -682,47 +736,51 @@ a.read-more {
 }
 
 .product-card .overlay::before {
-  right: 50px;
-  content: url(../images/arrow_white.png);
+  right: 15px;
+  content: url(../images/noun-arrow-3134190.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
   margin-right: 10px;
   position: absolute;
-  padding-top: 60px;
+  padding-top: 38px;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 .product-card .overlay.active::before {
-  right: 50px;
-  content: url(../images/arrow_blue.png);
+  right: 15px;
+  content: url(../images/noun-arrow-3134190.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
   margin-right: 10px;
   position: absolute;
-  padding-top: 60px;
+  padding-top: 38px;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 
 .pipe-coating .product-card .overlay::before {
-  right: 50px;
-  content: url(../images/arrow_white.png);
+  right: 15px;
+  content: url(../images/noun-arrow-3134190.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
   margin-right: 10px;
   position: absolute;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   bottom: 0;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 .pipe-coating .product-card .overlay.active::before {
-  right: 50px;
-  content: url(../images/arrow_blue.png);
+  right: 15px;
+  content: url(../images/noun-arrow-3134190.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
   margin-right: 10px;
   position: absolute;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   bottom: 0;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 
 .pipe-coating .product-card p {
@@ -787,9 +845,24 @@ a.read-more {
 
 .quality-control-section {
   background: linear-gradient(to right, #003262, #0a7ab7);
+  background-size: 300% 300%;
   color: white;
   padding: 50px 0;
+  animation: gradient 12s ease infinite;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .text-content {
   padding: 0 0 0 110px;
@@ -923,14 +996,14 @@ a.read-more {
 }
 
 .news-card p.news-text::before {
-  content: url(../images/arrow_blue.png);
+  content: url(../images/noun-arrow-3134190.svg);
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: auto;
-  margin-right: 0px;
   position: relative;
-  padding-top: 15px;
+  padding-top: 22px;
   float: right;
+  animation: moveLeftRight 1s ease-in-out infinite;
 }
 
 .news-text::after {
@@ -1020,11 +1093,12 @@ a.read-more {
 
 .fa-map-marker-alt {
   display: inline-block;
-  width: 80px; /* Adjust size */
-  height: auto; /* Adjust size */
+  width: 20px; /* Adjust size */
+  height: 20px; /* Adjust size */
   background: url("../images/location.png") no-repeat center center;
   background-size: contain; /* Ensures the image fits properly */
   margin-right: 10px;
+  vertical-align: middle;
 }
 
 .fa-facebook-f {
@@ -1125,6 +1199,7 @@ a.read-more {
 
 .footer-contact {
   font-size: 16px;
+  text-align: left;
 }
 
 .footer-bottom {
@@ -2389,3 +2464,47 @@ a{
 .blsgroup-title{
     color: #003262;
 }
+/* General SVG styles */
+svg {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* Common stroke setup (invisible at first) */
+.draw-path,
+.cls-1,
+.cls-2 {
+  fill: none;
+  stroke: #0a7ab7;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease; /* optional smoothing */
+}
+#clientIcon .cls-1{
+    stroke-width: 0.4px;
+}
+#gearIcon .cls-1, .cls-2{
+    stroke-width: 2;
+}
+
+/* Animation trigger */
+.animate-stroke {
+  animation: draw 7s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.products-wrapper {
+  background: url("../images/bg_products.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  padding-top: 60px; /* Adjust if you have a fixed navbar */
+  padding-bottom: 60px;
+}
+

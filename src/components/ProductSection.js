@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { adminBaseUrl } from "../App";
 
 const ProductSection = () => {
@@ -15,6 +17,11 @@ const ProductSection = () => {
   };
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
     const fetchProducts = async () => {
       try {
         const response = await axios.get(adminBaseUrl + "/api/products");
@@ -31,11 +38,11 @@ const ProductSection = () => {
     <section className="product-section">
       <div className="container">
         <div className="row d-flex align-items-center justify-content-between pb-4">
-          <div className="col">
+          <div className="col" data-aos="fade-right">
             <h2 className="section-title">OPTICAL FIBRE CABLES</h2>
           </div>
-          <div className="col-auto">
-            <a href="#" className="btn btn-primary">
+          <div className="col-auto" data-aos="fade-left">
+            <a href="/" className="btn btn-primary">
               MORE PRODUCTS
             </a>
           </div>
@@ -43,7 +50,12 @@ const ProductSection = () => {
 
         <div className="row">
           {products.map((product, index) => (
-            <div className="col-md-6" key={index}>
+            <div
+              key={index}
+              className="col-md-6"
+              data-aos={index === 0 ? "fade-right" : "fade-left"}
+              data-aos-delay={index * 100}
+            >
               <div
                 className="product-card"
                 style={{
