@@ -6,24 +6,12 @@ import {
   CFooter,
   CSidebar,
   CSidebarNav,
+  CNavGroup,
   CNavItem,
   CNavLink,
-  CSidebarBrand,
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
-import {
-  cilSpeedometer,
-  cilNewspaper,
-  cilImage,
-  cilGlobeAlt,
-  cilList,
-  cilChart,
-  cilBolt,
-  cilColorBorder,
-  cilListRich,
-  cilSettings,
-  cilGroup,
-} from "@coreui/icons";
+import { cilSpeedometer } from "@coreui/icons";
 
 // 🔥 Import Topbar
 import Topbar from "../components/Topbar";
@@ -38,122 +26,65 @@ const AdminLayout = () => {
         {/* Sidebar */}
         <CSidebar visible={true} className="border-end">
           <CSidebarNav>
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/dashboard"
-                activeClassName="active"
-              >
-                <CIcon icon={cilSpeedometer} className="me-2" />
-                Dashboard
-              </CNavLink>
-            </CNavItem>
+            <CNavGroup
+              item
+              toggler="Home Page"
+              icon={<CIcon icon={cilSpeedometer} customClassName="nav-icon" />}
+            >
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/herocarousel">
+                  Hero Slider
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/herocarousel"
-                activeClassName="active"
-              >
-                <CIcon icon={cilImage} className="me-2" />
-                Hero Slider
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/globalexpansion">
+                  Global Expansion
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/globalexpansion"
-                activeClassName="active"
-              >
-                <CIcon icon={cilGlobeAlt} className="me-2" />
-                Global Expansion
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/product-range">
+                  Product Range
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/product-range"
-                activeClassName="active"
-              >
-                <CIcon icon={cilList} className="me-2" />
-                Product Range
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/stats">
+                  Stats
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink as={NavLink} to="/admin/stats" activeClassName="active">
-                <CIcon icon={cilChart} className="me-2" />
-                Stats
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/power-cables">
+                  Power Cable
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/power-cables"
-                activeClassName="active"
-              >
-                <CIcon icon={cilBolt} className="me-2" />
-                Power Cable
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/pipe-coating">
+                  Pipe Coating
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/pipe-coating"
-                activeClassName="active"
-              >
-                <CIcon icon={cilColorBorder} className="me-2" />
-                Pipe Coating
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/products">
+                  Fiber Cable
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/products"
-                activeClassName="active"
-              >
-                <CIcon icon={cilListRich} className="me-2" />
-                Product Section
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/clients">
+                  Our Clients
+                </CNavLink>
+              </CNavItem>
 
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/quality-control"
-                activeClassName="active"
-              >
-                <CIcon icon={cilSettings} className="me-2" />
-                Quality Control
-              </CNavLink>
-            </CNavItem>
-
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/clients"
-                activeClassName="active"
-              >
-                <CIcon icon={cilGroup} className="me-2" />
-                Clients
-              </CNavLink>
-            </CNavItem>
-
-            <CNavItem>
-              <CNavLink
-                as={NavLink}
-                to="/admin/news-section"
-                activeClassName="active"
-              >
-                <CIcon icon={cilNewspaper} className="me-2" />
-                News
-              </CNavLink>
-            </CNavItem>
+              <CNavItem>
+                <CNavLink as={NavLink} to="/admin/news-section">
+                  News & Events
+                </CNavLink>
+              </CNavItem>
+            </CNavGroup>
           </CSidebarNav>
         </CSidebar>
 

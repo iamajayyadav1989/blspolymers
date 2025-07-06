@@ -6,22 +6,19 @@ const LatestNews = () => {
       <div className="container">
         <h3 className="section-title contact-title">Latest News</h3>
         <div className="news-item">
-          Jun 28, 2023 - BLS commences Production of Plasticizers: India’s First
-          Integrated Facility at GOA. <br />
-          Read more Press Release
+          1991 : BLS Polymers Limited incorporated
         </div>
-        <div className="news-item py-3">
-          Nov. 2022 - Organised Yoga Camp at BLS on 17th November 2022,
-          promoting holistic health.
+        <div className="news-item py-2">2002 : New Plant Setup in Goa</div>
+        <div className="news-item py-2">2014 : Expansion done at the Plant</div>
+        <div className="news-item py-2">
+          2018 : Developed Products for Anti-Tracking compounds for Power cables
         </div>
-        <div className="news-item py-3">
-          Oct. 2022 - Shri Aggarwal became Vice President of PHD Chamber of
-          Commerce & Industry.
+        <div className="news-item py-2">2020 : XLPE products established</div>
+        <div className="news-item py-2">2022: Developed adhesives for 3LPE</div>
+        <div className="news-item">
+          2023 : First Indian Company to demonstrate 3LPE coating raw material &
+          received certification from EIL
         </div>
-        <div className="news-item py-3">
-          Mar. 2022 - Commissioned Adhesives Plant in GOA.
-        </div>
-        <div className="news-item">Dec. 2021 - New office in Indore.</div>
       </div>
     </section>
   );

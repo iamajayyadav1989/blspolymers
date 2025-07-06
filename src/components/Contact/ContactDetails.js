@@ -12,7 +12,7 @@ const ContactDetails = () => {
         <strong>Phone:</strong> +91 11 400 786 01, +91 11 23755263
       </p>
       <p>
-        <strong>Email:</strong> blspoly@blsgroup.in | backoffice@blspolymers.com
+        <strong>Email:</strong> backoffice@blspolymers.com
       </p>
       <p className="pt-3 pb-3">
         <strong>Please contact us if you need some information.</strong>

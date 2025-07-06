@@ -3,6 +3,7 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css"; // AOS CSS
 import { adminBaseUrl } from "../App";
+import { Link } from "react-router-dom";
 
 const PipeCoating = () => {
   const [data, setData] = useState(null);
@@ -50,10 +51,15 @@ const PipeCoating = () => {
                   backgroundImage: `url(${process.env.PUBLIC_URL}/images/${item.image})`,
                 }}
               >
-                <div className={`overlay ${index === 1 ? "active" : ""}`}>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
+                <Link
+                  to={`/products/${item.slug || item._id}`}
+                  className="overlay-link"
+                >
+                  <div className={`overlay ${index === 1 ? "active" : ""}`}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}

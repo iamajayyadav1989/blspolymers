@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Layouts
@@ -14,6 +14,15 @@ import Investors from "./pages/Investors";
 import Events from "./pages/NewsEvents";
 import Gallery from "./pages/Gallery";
 import Careers from "./pages/Careers";
+
+import HffrCompound from "./pages/HffrCompound";
+import PVCCompound from "./pages/PVCCompound";
+import PECompound from "./pages/PECompound";
+import XlpeCompound from "./pages/XlpeCompound";
+import PipeCoatingPage from "./pages/PipeCoatingPage";
+import Adhesive from "./pages/Adhesive";
+import CableFilling from "./pages/CableFilling";
+
 import ContactUs from "./pages/ContactUs";
 import AdminLogin from "./pages/AdminLogin";
 
@@ -50,8 +59,28 @@ import AdminLayout from "./admin/layout/AdminLayout";
 export const adminBaseUrl =
   "https://vasudeep.com:8084/http://srv859195.hstgr.cloud:8080";
 
-// Home Page Combined Component
 const HomePage = () => {
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll("a.btn-primary").forEach((el) => {
+        if (!el.querySelector("span")) {
+          const text = el.textContent.trim();
+          el.textContent = "";
+          const span = document.createElement("span");
+          span.textContent = text;
+          el.appendChild(span);
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => observer.disconnect(); // Clean up
+  }, []);
+
   return (
     <>
       <HeroCarousel />
@@ -87,6 +116,14 @@ const App = () => {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />
+
+          <Route path="/products/hffr-compound" element={<HffrCompound />} />
+          <Route path="/products/pvc-compound" element={<PVCCompound />} />
+          <Route path="/products/pe-compound" element={<PECompound />} />
+          <Route path="/products/xlpe-compound" element={<XlpeCompound />} />
+          <Route path="/products/pipe-coating" element={<PipeCoatingPage />} />
+          <Route path="/products/adhesive" element={<Adhesive />} />
+          <Route path="/products/cable-filling" element={<CableFilling />} />
         </Route>
 
         {/* Admin Login Without Header/Footer */}

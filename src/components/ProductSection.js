@@ -3,6 +3,7 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { adminBaseUrl } from "../App";
+import { Link } from "react-router-dom";
 
 const ProductSection = () => {
   const [products, setProducts] = useState([]);
@@ -42,9 +43,9 @@ const ProductSection = () => {
             <h2 className="section-title">OPTICAL FIBRE CABLES</h2>
           </div>
           <div className="col-auto" data-aos="fade-left">
-            <a href="/" className="btn btn-primary">
+            <Link to="products" className="btn btn-primary">
               MORE PRODUCTS
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -62,10 +63,15 @@ const ProductSection = () => {
                   backgroundImage: `url(${getImage(product.image)})`,
                 }}
               >
-                <div className={`overlay ${index === 1 ? "active" : ""}`}>
-                  <h3>{product.title}</h3>
-                  <p>{product.description}</p>
-                </div>
+                <Link
+                  to={`/products/${product.slug || product._id}`}
+                  className="overlay-link"
+                >
+                  <div className={`overlay ${index === 1 ? "active" : ""}`}>
+                    <h3>{product.title}</h3>
+                    <p>{product.description}</p>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}

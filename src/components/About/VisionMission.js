@@ -5,7 +5,6 @@ import missionIcon from "../../assets/images/mission-icon.png";
 const VisionMission = () => {
   return (
     <div className="container">
-      <h3 className="section-title mt-5">About BLS/Company Profile</h3>
       <p className="about-text">
         BLS Polymers started as a vision of Sri Vinod Aggarwal to boost domestic
         competencies in the polymer compounds sector. Established in 1991, BLS

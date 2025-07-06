@@ -21,22 +21,6 @@ const eventData = [
     description:
       "BLS has adopted an ERP solution to enhance manufacturing efficiency, quality monitoring, and process improvement.",
   },
-  {
-    image: "images/plast-alger.png",
-    alt: "Plast Alger",
-    title:
-      "Palais des Expositions d’ Alger - SAFEX, Algeria Wire and Cable Fair 2025",
-  },
-  {
-    image: "images/plasto.png",
-    alt: "Plasto 2025",
-    title: "Pune International Exhibition & Convention Centre, Pune, India",
-  },
-  {
-    image: "images/pu-tech.png",
-    alt: "PU Tech 2025",
-    title: "India Expo Centre, Greater Noida, India",
-  },
 ];
 
 export default eventData;

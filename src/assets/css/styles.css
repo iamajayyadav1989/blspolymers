@@ -364,8 +364,8 @@ a.read-more {
 }
 
 .image-container {
-  width: 300px; /* Adjust as needed */
-  height: 180px; /* Adjust as needed */
+  width: 300px;
+  height: 180px; 
   background: url("../images/layer_84.jpg") no-repeat center center;
   background-size: cover;
   position: absolute;
@@ -376,11 +376,24 @@ a.read-more {
   top: 341px;
 }
 
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+  z-index: 1;
+}
+
 .arrow-icon {
-  font-size: 40px; /* Adjust size */
+  font-size: 40px;
   color: white;
-  opacity: 1; /* Initially hidden */
+  opacity: 1;
   transition: opacity 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
 }
 
 .image-container:hover .arrow-icon {
@@ -1938,11 +1951,12 @@ a.read-more {
   }
 }
 .about-section h3 {
-  color: #003262;
+  color: #003262 !important;
 }
 
 .vision-mission .icon {
-  height: 100%;
+  height: 100% !important;
+  width: auto !important;
 }
 
 .vision-mission h3 {
@@ -2508,3 +2522,9 @@ svg {
   padding-bottom: 60px;
 }
 
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+.modal {
+  z-index: 1050 !important;
+}

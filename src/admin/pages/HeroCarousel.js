@@ -106,15 +106,6 @@ const HeroCarousel = () => {
     setVisible(true);
   };
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:5000/api/heroslides/${id}`);
-      fetchSlides(); // Refresh slides list after delete
-    } catch (error) {
-      console.error("Delete failed", error);
-    }
-  };
-
   const handleClose = () => {
     setVisible(false);
     setIsEditing(false);
@@ -176,14 +167,6 @@ const HeroCarousel = () => {
                     onClick={() => handleEdit(slide)}
                   >
                     Edit
-                  </CButton>
-
-                  <CButton
-                    color="danger"
-                    size="sm"
-                    onClick={() => handleDelete(slide._id)}
-                  >
-                    Delete
                   </CButton>
                 </CTableDataCell>
               </CTableRow>

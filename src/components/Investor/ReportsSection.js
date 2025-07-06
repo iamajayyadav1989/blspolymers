@@ -4,9 +4,9 @@ import reportLogo from "../../assets/images/investor-bls-logo.jpg";
 import reportPdf from "../../assets/images/EIL-CERTIFICATION.pdf";
 
 const reports = [
-  { year: "2019-20", file: reportPdf },
-  { year: "2018-19", file: reportPdf },
-  { year: "2017-18", file: reportPdf },
+  { year: "2021-2022", file: reportPdf },
+  { year: "2022-2023", file: reportPdf },
+  { year: "2023-2024", file: reportPdf },
 ];
 
 const ReportsSection = () => {

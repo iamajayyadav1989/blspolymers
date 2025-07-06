@@ -1,21 +1,40 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { adminBaseUrl } from "../App";
+import React, { useState } from "react";
+
+// Local mock data (you can replace this with API response later)
+const productItems = [
+  {
+    title: "BLS PRODUCT RANGE",
+    subtitle: "PE-COMPOUND\n(HDPE, MDPE, LDPE & LLDPE)",
+    description: "Polyolefin compound for\nInsulation and Jacketing/Sheathing",
+    buttonText: "VIEW MORE",
+    buttonLink: "products/pe-compound",
+    overlayText: "PE\nCOMPOUND",
+    overlayLink: "products/pe-compound",
+    image: "layer_83.jpg",
+  },
+  {
+    title: "BLS PRODUCT RANGE",
+    subtitle: "Adhesives\n",
+    description:
+      "Adhesive for reliable bonding\nbetween Top coat & Fusion Bonded Epoxy Layer",
+    buttonText: "VIEW MORE",
+    buttonLink: "products/adhesive",
+    overlayText: "Adhesives",
+    overlayLink: "products/adhesive",
+    image: "layer_84_adha.jpg",
+  },
+];
 
 const ProductRange = () => {
-  const [data, setData] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const data = productItems[currentIndex];
 
-  useEffect(() => {
-    axios
-      .get(adminBaseUrl + "/api/productrange")
-      .then((res) => setData(res.data))
-      .catch((err) => console.error("Failed to load ProductRange", err));
-  }, []);
-
-  if (!data) return <div>Loading...</div>;
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % productItems.length);
+  };
 
   return (
-    <section className="product-range">
+    <section className="product-range mb-5">
       <div className="container-fluid">
         <div className="row">
           {/* Left Side: Text Content */}
@@ -59,15 +78,22 @@ const ProductRange = () => {
             </div>
           </div>
 
-          {/* Right Side: Image */}
+          {/* Right Side: Image and Arrow */}
           <div className="col-lg-6 position-relative p-0">
             <img
               src={`${process.env.PUBLIC_URL}/images/${data.image}`}
               alt="Product Range"
               className="img-fluid main-img"
             />
-            <div className="image-container">
-              <div className="arrow-icon">&#x276F;</div>
+            <div
+              className="image-container"
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/${data.image})`,
+              }}
+            >
+              <div className="arrow-icon" onClick={handleNext}>
+                &#x276F;
+              </div>
             </div>
           </div>
         </div>

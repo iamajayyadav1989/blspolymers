@@ -65,6 +65,8 @@ const AboutIntro = () => {
         and allows continuous R&D for new formulations to meet specific client
         needs.
       </p>
+
+      <h3 className="section-title mt-5">About BLS/Company Profile</h3>
     </div>
   );
 };
