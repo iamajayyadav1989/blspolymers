@@ -11,6 +11,23 @@ const PowerCables = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll("a.btn-primary").forEach((el) => {
+        if (!el.querySelector("span")) {
+          const text = el.textContent.trim();
+          el.textContent = "";
+          const span = document.createElement("span");
+          span.textContent = text;
+          el.appendChild(span);
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
     AOS.init({ duration: 1000, once: true });
 
     const fetchData = async () => {

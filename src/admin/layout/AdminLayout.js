@@ -26,65 +26,59 @@ const AdminLayout = () => {
         {/* Sidebar */}
         <CSidebar visible={true} className="border-end">
           <CSidebarNav>
-            <CNavGroup
-              item
-              toggler="Home Page"
-              icon={<CIcon icon={cilSpeedometer} customClassName="nav-icon" />}
-            >
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/herocarousel">
-                  Hero Slider
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/herocarousel">
+                Hero Slider
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/globalexpansion">
-                  Global Expansion
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/globalexpansion">
+                Global Expansion
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/product-range">
-                  Product Range
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/product-range">
+                Product Range
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/stats">
-                  Stats
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/stats">
+                Stats
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/power-cables">
-                  Power Cable
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/power-cables">
+                Power Cable
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/pipe-coating">
-                  Pipe Coating
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/pipe-coating">
+                Pipe Coating
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/products">
-                  Fiber Cable
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/products">
+                Fiber Cable
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/clients">
-                  Our Clients
-                </CNavLink>
-              </CNavItem>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/clients">
+                Our Clients
+              </CNavLink>
+            </CNavItem>
 
-              <CNavItem>
-                <CNavLink as={NavLink} to="/admin/news-section">
-                  News & Events
-                </CNavLink>
-              </CNavItem>
-            </CNavGroup>
+            <CNavItem>
+              <CNavLink as={NavLink} to="/admin/news-section">
+                News & Events
+              </CNavLink>
+            </CNavItem>
           </CSidebarNav>
         </CSidebar>
 

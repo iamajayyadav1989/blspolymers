@@ -5,6 +5,23 @@ import { adminBaseUrl } from "../App";
 import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll("button.btn-primary").forEach((el) => {
+      if (!el.querySelector("span")) {
+        const text = el.textContent.trim();
+        el.textContent = "";
+        const span = document.createElement("span");
+        span.textContent = text;
+        el.appendChild(span);
+      }
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
