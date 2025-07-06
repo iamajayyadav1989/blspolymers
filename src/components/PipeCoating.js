@@ -9,6 +9,22 @@ const PipeCoating = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll("a.btn-primary").forEach((el) => {
+        if (!el.querySelector("span")) {
+          const text = el.textContent.trim();
+          el.textContent = "";
+          const span = document.createElement("span");
+          span.textContent = text;
+          el.appendChild(span);
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
     // Initialize AOS
     AOS.init({
       duration: 1000, // animation duration
