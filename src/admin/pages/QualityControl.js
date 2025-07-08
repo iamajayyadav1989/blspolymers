@@ -24,7 +24,7 @@ const QualityControl = () => {
 
   useEffect(() => {
     axios
-      .get(adminBaseUrl + "/api/qualitycontrol")
+      .get(`${adminBaseUrl}/api/qualitycontrol`)
       .then((res) => {
         setFormData(res.data);
         setId(res.data._id);
@@ -49,24 +49,43 @@ const QualityControl = () => {
     }));
   };
 
-  const handleAddDescription = () => {
-    setFormData((prev) => ({
-      ...prev,
-      descriptions: [...prev.descriptions, ""],
-    }));
-  };
+  // const handleAddDescription = () => {
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     descriptions: [...prev.descriptions, ""],
+  //   }));
+  // };
+
+  // const handleRemoveDescription = (index) => {
+  //   const newDescriptions = [...formData.descriptions];
+  //   newDescriptions.splice(index, 1);
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     descriptions: newDescriptions,
+  //   }));
+  // };
 
   const handleFileChange = (file) => {
     setFormData((prev) => ({
       ...prev,
       image: file.name,
     }));
+
+    // Optional: Implement actual upload using FormData if backend supports it
+    /*
+    const formDataObj = new FormData();
+    formDataObj.append("file", file);
+    axios.post(`${adminBaseUrl}/api/upload`, formDataObj)
+      .then(res => {
+        setFormData(prev => ({ ...prev, image: res.data.filename }));
+      });
+    */
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/api/qualitycontrol/${id}`, formData)
+      .put(`${adminBaseUrl}/api/qualitycontrol/${id}`, formData)
       .then(() => setMessage("Quality Control updated successfully!"))
       .catch(() => setMessage("Failed to update Quality Control"));
   };
@@ -90,18 +109,35 @@ const QualityControl = () => {
             onChange={handleChange}
             className="mb-3"
           />
-          {formData.descriptions.map((desc, index) => (
-            <CFormTextarea
-              key={index}
-              label={`Description ${index + 1}`}
-              name={`description${index}`}
-              value={desc}
-              onChange={(e) => handleDescriptionChange(e, index)}
-              className="mb-3"
-            />
-          ))}
 
-          {/* Updated File Input Section */}
+          {formData.descriptions.map((desc, index) => (
+            <div key={index} className="mb-3">
+              <CFormTextarea
+                label={`Description ${index + 1}`}
+                value={desc}
+                onChange={(e) => handleDescriptionChange(e, index)}
+              />
+              {/* <CButton
+                color="danger"
+                size="sm"
+                className="mt-2"
+                onClick={() => handleRemoveDescription(index)}
+                disabled={formData.descriptions.length === 1}
+              >
+                Remove
+              </CButton> */}
+            </div>
+          ))}
+          {/* <CButton
+            color="info"
+            size="sm"
+            className="mb-3"
+            onClick={handleAddDescription}
+          >
+            Add Description
+          </CButton> */}
+
+          {/* File Upload */}
           <div className="mb-3">
             <label className="form-label">Image Upload</label>
             <div>

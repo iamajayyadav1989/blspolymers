@@ -34,7 +34,7 @@ const ProductRange = () => {
   };
 
   return (
-    <section className="product-range mb-5">
+    <section className="product-range">
       <div className="container-fluid">
         <div className="row">
           {/* Left Side: Text Content */}
@@ -56,7 +56,7 @@ const ProductRange = () => {
                 </span>
               ))}
             </p>
-            <div className="row align-items-end">
+            <div className="row">
               <div className="col-6">
                 <a href={data.buttonLink} className="btn btn-primary mt-5">
                   {data.buttonText}

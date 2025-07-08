@@ -91,6 +91,9 @@ app.use("/api/gallery", galleryRoutes);
 
 app.use("/api/upload", require("./routes/upload"));
 
+const reportRoutes = require("./routes/reportRoutes");
+app.use("/api/reports", reportRoutes);
+
 app.use(express.static(path.join(__dirname, "public")));
 
 // MongoDB connection
@@ -105,7 +108,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+const PORT = 8080;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });

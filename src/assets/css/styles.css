@@ -2522,9 +2522,3 @@ svg {
   padding-bottom: 60px;
 }
 
-.modal-backdrop {
-  z-index: 1040 !important;
-}
-.modal {
-  z-index: 1050 !important;
-}

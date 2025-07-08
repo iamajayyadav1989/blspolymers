@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutHero = () => {
   return (
-    <div className="innerpage-hero-section d-flex">
+    <div className="aboutus-hero-section d-flex">
       <div className="container">
         <div className="breadcrumb-container">
           <nav aria-label="breadcrumb">

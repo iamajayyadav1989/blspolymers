@@ -42,6 +42,25 @@ const ExibitionGallery = () => {
         backdrop: true,
         keyboard: true,
       });
+
+      // Listen to modal hidden event to clean up leftover backdrop
+      const modalEl = modalRef.current;
+
+      const handleHidden = () => {
+        const backdrop = document.querySelector(".modal-backdrop");
+        if (backdrop) {
+          backdrop.parentNode?.removeChild(backdrop);
+        }
+        document.body.classList.remove("modal-open");
+        document.body.style.paddingRight = "";
+      };
+
+      modalEl.addEventListener("hidden.bs.modal", handleHidden);
+
+      return () => {
+        modalEl.removeEventListener("hidden.bs.modal", handleHidden);
+        bsModalRef.current?.dispose();
+      };
     }
   }, []);
 
@@ -52,10 +71,6 @@ const ExibitionGallery = () => {
 
   const hideModal = () => {
     bsModalRef.current?.hide();
-
-    // Fallback: manually remove backdrop if stuck
-    const backdrop = document.querySelector(".modal-backdrop");
-    if (backdrop) backdrop.remove();
   };
 
   const showNext = () => {
@@ -110,9 +125,6 @@ const ExibitionGallery = () => {
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">
-                {galleryItems[currentIndex]?.title}
-              </h5>
               <button
                 type="button"
                 className="btn-close"
@@ -141,13 +153,6 @@ const ExibitionGallery = () => {
                 ›
               </button>
             </div>
-            {galleryItems[currentIndex]?.description && (
-              <div className="modal-footer">
-                <p className="text-start">
-                  {galleryItems[currentIndex]?.description}
-                </p>
-              </div>
-            )}
           </div>
         </div>
       </div>

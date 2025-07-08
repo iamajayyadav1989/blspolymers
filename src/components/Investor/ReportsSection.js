@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import annualIcon from "../../assets/images/annual-report-icon.png";
 import reportLogo from "../../assets/images/investor-bls-logo.jpg";
-import reportPdf from "../../assets/images/EIL-CERTIFICATION.pdf";
-
-const reports = [
-  { year: "2021-2022", file: reportPdf },
-  { year: "2022-2023", file: reportPdf },
-  { year: "2023-2024", file: reportPdf },
-];
+import axios from "axios";
+import { adminBaseUrl } from "../../App";
 
 const ReportsSection = () => {
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${adminBaseUrl}/api/reports`)
+      .then((res) => {
+        setReports(res.data);
+      })
+      .catch((err) => console.error("Error fetching reports", err));
+  }, []);
+
   return (
     <section className="reports-section mt-5">
       <div className="container">
@@ -26,14 +32,14 @@ const ReportsSection = () => {
               className={`col-md-4 ${
                 index < reports.length - 1 ? "border-end" : ""
               }`}
-              key={index}
+              key={report._id}
             >
               <div className="report-card">
                 <img src={reportLogo} alt="BLS Polymers Report" />
                 <h5 className="pt-4">
                   Annual Report <br /> for the Year {report.year}
                 </h5>
-                <a href={report.file} download>
+                <a href={report.fileUrl} download>
                   Download Report
                 </a>
               </div>

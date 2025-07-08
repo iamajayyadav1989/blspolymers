@@ -52,12 +52,13 @@ import AdminPipeCoating from "./admin/pages/PipeCoating";
 import AdminProductSection from "./admin/pages/AdminProductSection";
 import AdminQualityControl from "./admin/pages/QualityControl";
 import AdminClients from "./admin/pages/AdminClients";
+import ReportAdmin from "./admin/pages/ReportsAdmin";
 import NewsSectionAdmin from "./admin/pages/NewsSectionAdmin";
 import AdminLayout from "./admin/layout/AdminLayout";
 
 // export const adminBaseUrl = "http://localhost:005000";
-export const adminBaseUrl =
-  "https://vasudeep.com:8084/http://srv859195.hstgr.cloud:8080";
+
+export const adminBaseUrl = "http://srv859195.hstgr.cloud:8080";
 
 const HomePage = () => {
   useEffect(() => {
@@ -151,6 +152,7 @@ const App = () => {
           <Route path="/admin/products" element={<AdminProductSection />} />
           <Route path="/admin/clients" element={<AdminClients />} />
           <Route path="/admin/news-section" element={<NewsSectionAdmin />} />
+          <Route path="/admin/reports" element={<ReportAdmin />} />
           <Route
             path="/admin/quality-control"
             element={<AdminQualityControl />}

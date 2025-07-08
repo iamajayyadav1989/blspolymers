@@ -1,5 +1,5 @@
 import React from "react";
-import financialFile from "../../assets/images/EIL-CERTIFICATION.pdf";
+import { Link } from "react-router-dom";
 
 const links = [
   "Earnings Conference Call <br><span class='fw-normal'>Transcript Q2</span><br><span class='fw-normal'>Press Releases</span>",
@@ -19,12 +19,11 @@ const FinancialSection = () => {
         </div>
         <div className="financial-links">
           {links.map((link, i) => (
-            <a
+            <Link
               key={i}
-              href={financialFile}
-              download
+              to="#"
               dangerouslySetInnerHTML={{ __html: link }}
-            ></a>
+            ></Link>
           ))}
         </div>
         <hr className="mt-1" />
