@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import * as bootstrap from "bootstrap";
+// src/admin/pages/ExibitionGallery.js
+import React, { useState } from "react";
+import { CModal, CModalHeader, CModalBody } from "@coreui/react";
 
 const ExibitionGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const modalRef = useRef(null);
-  const bsModalRef = useRef(null);
+  const [visible, setVisible] = useState(false);
 
   const galleryItems = [
     {
@@ -36,41 +36,13 @@ const ExibitionGallery = () => {
     },
   ];
 
-  useEffect(() => {
-    if (modalRef.current) {
-      bsModalRef.current = new bootstrap.Modal(modalRef.current, {
-        backdrop: true,
-        keyboard: true,
-      });
-
-      // Listen to modal hidden event to clean up leftover backdrop
-      const modalEl = modalRef.current;
-
-      const handleHidden = () => {
-        const backdrop = document.querySelector(".modal-backdrop");
-        if (backdrop) {
-          backdrop.parentNode?.removeChild(backdrop);
-        }
-        document.body.classList.remove("modal-open");
-        document.body.style.paddingRight = "";
-      };
-
-      modalEl.addEventListener("hidden.bs.modal", handleHidden);
-
-      return () => {
-        modalEl.removeEventListener("hidden.bs.modal", handleHidden);
-        bsModalRef.current?.dispose();
-      };
-    }
-  }, []);
-
   const showModal = (index) => {
     setCurrentIndex(index);
-    bsModalRef.current?.show();
+    setVisible(true);
   };
 
   const hideModal = () => {
-    bsModalRef.current?.hide();
+    setVisible(false);
   };
 
   const showNext = () => {
@@ -113,49 +85,45 @@ const ExibitionGallery = () => {
         </div>
       </div>
 
-      {/* Bootstrap Modal */}
-      <div
-        className="modal fade"
-        id="galleryModal"
-        tabIndex="-1"
-        ref={modalRef}
-        aria-labelledby="galleryModalLabel"
-        aria-hidden="true"
+      {/* CoreUI Modal */}
+      <CModal
+        visible={visible}
+        onClose={hideModal}
+        size="lg"
+        alignment="center"
+        backdrop="static"
+        className="gallery-modal"
       >
-        <div className="modal-dialog modal-dialog-centered modal-lg">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button
-                type="button"
-                className="btn-close"
-                onClick={hideModal}
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body text-center position-relative">
-              <img
-                src={`/${galleryItems[currentIndex]?.imageUrl}`}
-                alt="Gallery"
-                className="img-fluid"
-              />
-              <button
-                type="button"
-                className="btn btn-secondary position-absolute start-0 top-50 translate-middle-y"
-                onClick={showPrev}
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                className="btn btn-secondary position-absolute end-0 top-50 translate-middle-y"
-                onClick={showNext}
-              >
-                ›
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+        <CModalHeader closeButton></CModalHeader>
+        <CModalBody className="text-center position-relative">
+          <img
+            src={`/${galleryItems[currentIndex]?.imageUrl}`}
+            alt="Gallery"
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover", // or "contain" if you want full image without cropping
+            }}
+            className="d-block mx-auto"
+          />
+          <button
+            type="button"
+            className="btn btn-secondary position-absolute start-0 top-50 translate-middle-y"
+            onClick={showPrev}
+            style={{ zIndex: 1056 }}
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary position-absolute end-0 top-50 translate-middle-y"
+            onClick={showNext}
+            style={{ zIndex: 1056 }}
+          >
+            ›
+          </button>
+        </CModalBody>
+      </CModal>
     </section>
   );
 };

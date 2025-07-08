@@ -56,9 +56,9 @@ import ReportAdmin from "./admin/pages/ReportsAdmin";
 import NewsSectionAdmin from "./admin/pages/NewsSectionAdmin";
 import AdminLayout from "./admin/layout/AdminLayout";
 
-// export const adminBaseUrl = "http://localhost:005000";
+export const adminBaseUrl = "http://localhost:005000";
 
-export const adminBaseUrl = "http://srv859195.hstgr.cloud:8080";
+// export const adminBaseUrl = "http://srv859195.hstgr.cloud:8080";
 
 const HomePage = () => {
   useEffect(() => {

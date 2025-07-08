@@ -5,9 +5,15 @@ const path = require("path");
 const getQualityControl = async (req, res) => {
   try {
     const qualityControl = await QualityControl.findOne();
+
+    if (!qualityControl) {
+      return res.status(404).json({
+        message: "No quality control data found",
+      });
+    }
+
     res.status(200).json(qualityControl);
   } catch (error) {
-    console.error("❌ Error in getQualityControl:", error);
     res.status(500).json({
       message: "Failed to fetch quality control data",
       error: error.message || error,
