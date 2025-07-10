@@ -43,7 +43,7 @@ const ProductSection = () => {
             <h2 className="section-title">OPTICAL FIBRE CABLES</h2>
           </div>
           <div className="col-auto" data-aos="fade-left">
-            <Link to="products" className="btn btn-primary">
+            <Link to="/products" className="btn btn-primary">
               MORE PRODUCTS
             </Link>
           </div>
