@@ -18,21 +18,23 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const payload = {
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      message: `${formData.comments} | Mobile: ${formData.mobile}`,
+    };
+
+    // console.log("Sending payload:", payload);
+
     try {
-      const response = await axios.post(
-        adminBaseUrl + "/api/contact-form",
-        formData
-      );
+      const response = await axios.post(adminBaseUrl + "/api/contact", payload);
       alert("Message sent successfully!");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        mobile: "",
-        comments: "",
-      });
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error(
+        "Error sending message:",
+        error.response?.data || error.message
+      );
       alert("Failed to send message.");
     }
   };

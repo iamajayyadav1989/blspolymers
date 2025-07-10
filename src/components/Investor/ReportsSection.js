@@ -39,9 +39,7 @@ const ReportsSection = () => {
                 <h5 className="pt-4">
                   Annual Report <br /> for the Year {report.year}
                 </h5>
-                <a href={report.fileUrl} download>
-                  Download Report
-                </a>
+                <a href="#">Download Report</a>
               </div>
             </div>
           ))}

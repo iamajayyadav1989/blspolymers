@@ -750,7 +750,7 @@ a.read-more {
 
 .product-card .overlay::before {
   right: 15px;
-  content: url(../images/noun-arrow-3134190.svg);
+  content: url(../images/noun-arrow-white.svg);
   display: inline-block;
   width: 40px;
   height: auto;
@@ -773,7 +773,7 @@ a.read-more {
 
 .pipe-coating .product-card .overlay::before {
   right: 15px;
-  content: url(../images/noun-arrow-3134190.svg);
+  content: url(../images/noun-arrow-white.svg);
   display: inline-block;
   width: 40px;
   height: auto;
@@ -1461,15 +1461,15 @@ a.read-more {
   }
 
   .hero-title {
-    font-size: 2.5rem; /* Further reduce size */
-    line-height: 50px;
+    font-size: 2.2rem;
+    line-height: 40px;
     text-align: left;
     padding-left: 15px;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
-    line-height: 30px;
+    font-size: 1rem;
+    line-height: 25px;
     text-align: left;
     padding-left: 15px;
   }
@@ -1550,7 +1550,7 @@ a.read-more {
   }
   .section-title::before {
     left: -45px;
-    top: 58px;
+    top: 15px;
   }
   .global-expansion .col-lg-6 {
     text-align: left;
@@ -1597,7 +1597,7 @@ a.read-more {
   }
 
   .stat-text p {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .divider {
@@ -1789,11 +1789,73 @@ a.read-more {
     left: 0;
     margin-top: 30px;
   }
+  .news-image {
+    height: auto;
+  }
+  .event-image {
+    height: auto !important;
+  }
+  .overlay h3 {
+      font-size: 1.5rem !important;
+  }
+  .product-card{
+    padding: 10px !important;
+  }
+  .stat-item{
+      gap: 0;
+  }
+  .stats-box {
+    padding: 15px;
+  }
+  svg {
+    width: 60px !important;
+  }
+.aboutus-hero-section,
+.certificate-hero-section,
+.events-hero-section,
+.investor-hero-section,
+.gallery-hero-section,
+.career-hero-section,
+.pipecoating-hero-section,
+.hffr-hero-section,
+.pvc-hero-section,
+.xlpe-hero-section,
+.contact-hero-section {
+  height: 200px !important;
+}
+.contact-section .table-responsive{
+  width: 100% !important;
+}
+.product-range .product-title {
+    font-size: 1.2rem;
+}
+.image-container {
+    width: 120px;
+    height: 70px;
+    top: 160px;
+    right: 0;
+}
+.arrow-icon {
+    font-size: 25px;
+}
+.reports-section .reports-title {
+    font-size: 1.5rem;
+}
+.reports-section .reports-title img{
+    width: 60px;
+}
+.financial-links {
+  flex-wrap: unset !important;
+  overflow: scroll;
+}
+.report-card {
+  padding-bottom: 20px;
+}
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
 
   .section-title::before {
